@@ -1,0 +1,11 @@
+{% extends "master.html" %}
+
+{% block title %}
+    {{ news.title }}
+{% endblock %}
+
+{% block content %}
+    <h1>{{ news.title }} ({{ news.author }})</h1>
+    <a href="{{ news.url }}">Source</a>
+    <p>{{ news.content }}</p>
+{% endblock %}

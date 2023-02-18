@@ -1,0 +1,54 @@
+{% extends "master.html" %}
+
+{% block title %}
+    Lead News
+{% endblock %}
+
+{% block content %}
+    <section class="py-5 text-center container">
+        <div class="row py-lg-5">
+            <div class="col-lg-6 col-md-8 mx-auto">
+                <h1 class="fw-light">Latest News</h1>
+                <p class="lead text-muted"></p>
+            </div>
+        </div>
+    </section>
+
+    <div class="album py-5 bg-light">
+        <div class="container">
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+                {% for news in latest_news %}
+                    <div class="col">
+                        <div class="card shadow-sm">
+
+                            <img class="bd-placeholder-img card-img-top" width="100%" height="225"
+                                 src="{{ news.url_to_image }}" alt="{{ news.title }}"/>
+
+                            <div class="card-body">
+                                <p class="card-text">{{ news.title }}</p>
+                                <div class="d-flex mb-lg-2 justify-content-between align-items-center">
+                                    <small class="text-muted ">- {{ news.author }}</small>
+                                    <small class="text-muted"> {{ news.published_at }} </small>
+                                </div>
+                                <div></div>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="btn-group">
+                                        <a type="button" class="btn btn-sm btn-outline-secondary"
+                                                href="{% url 'details' news.id %}">Details
+                                        </a>
+                                        <button type="button" class="btn btn-sm btn-outline-secondary"
+                                                onclick="window.open('{{ news.url }}')"
+                                        >Read
+                                        </button>
+                                    </div>
+                                    <small class="text-muted">{{ news.source_name }}</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+
+            </div>
+        </div>
+    </div>
+{% endblock %}
