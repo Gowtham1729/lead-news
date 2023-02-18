@@ -32,6 +32,8 @@ class Migration(migrations.Migration):
                 ("source_id", models.CharField(max_length=255, null=True)),
                 ("source_name", models.CharField(max_length=255)),
             ],
-            options={"verbose_name_plural": "News",},
+            options={
+                "verbose_name_plural": "News",
+            },
         ),
     ]

@@ -4,7 +4,7 @@ from .models import News
 
 
 class NewsAdmin(admin.ModelAdmin):
-    list_display = ('title', 'published_at', 'source_name', 'author')
+    list_display = ("title", "published_at", "source_name", "author")
 
 
 # Register your models here.

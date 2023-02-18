@@ -19,5 +19,5 @@ class News(models.Model):
 
     class Meta:
         verbose_name_plural = "News"
-        unique_together = ['title', 'source_name']
-        ordering = ['-published_at']
+        unique_together = ["title", "source_name"]
+        ordering = ["-published_at"]

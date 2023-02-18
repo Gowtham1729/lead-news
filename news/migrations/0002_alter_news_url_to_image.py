@@ -11,6 +11,8 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.AlterField(
-            model_name="news", name="url_to_image", field=models.URLField(null=True),
+            model_name="news",
+            name="url_to_image",
+            field=models.URLField(null=True),
         ),
     ]

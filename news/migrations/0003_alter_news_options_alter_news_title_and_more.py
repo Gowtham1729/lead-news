@@ -15,9 +15,12 @@ class Migration(migrations.Migration):
             options={"ordering": ["-published_at"], "verbose_name_plural": "News"},
         ),
         migrations.AlterField(
-            model_name="news", name="title", field=models.CharField(max_length=511),
+            model_name="news",
+            name="title",
+            field=models.CharField(max_length=511),
         ),
         migrations.AlterUniqueTogether(
-            name="news", unique_together={("title", "source_name")},
+            name="news",
+            unique_together={("title", "source_name")},
         ),
     ]
