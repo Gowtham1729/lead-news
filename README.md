@@ -27,7 +27,7 @@ python manage.py runserver
 py manage.py createsuperuser
 ```
 
-URLs:
+
 - Home - http://127.0.0.1:8000/
 - Latest News (Same as Home) - http://127.0.0.1:8000/news/
 - Admin Panel - http://127.0.0.1:8000/admin/
