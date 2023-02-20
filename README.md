@@ -3,7 +3,7 @@
 ## Installation
 ```shell
 git clone https://github.com/Gowtham1729/lead-news
-cd lead_news
+cd lead-news
 pip install virtualenv
 virtualenv lead_news_venv
 source lead_news_venv/bin/activate
