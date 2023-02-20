@@ -27,12 +27,12 @@ python manage.py runserver
 py manage.py createsuperuser
 ```
 
-Home - http://127.0.0.1:8000/
-Latest News (Same as Home) - http://127.0.0.1:8000/news/
-Admin Panel - http://127.0.0.1:8000/admin/
-News API endpoints - http://127.0.0.1:8000/api/news
+- Home - http://127.0.0.1:8000/
+- Latest News (Same as Home) - http://127.0.0.1:8000/news/
+- Admin Panel - http://127.0.0.1:8000/admin/
+- News API endpoints - http://127.0.0.1:8000/api/news
 
-Note: Change the port number if the site is running on a different port
+*Note:* Change the port number if the site is running on a different port
 
 ## Demo
 ![lead_news](https://user-images.githubusercontent.com/25081151/219856766-23a9d1ac-b3fa-496a-8be0-063be8d787e0.gif)
