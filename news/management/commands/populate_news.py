@@ -4,7 +4,7 @@ from typing import List
 import requests
 from django.core.management.base import BaseCommand
 
-from config import API_KEY, NEWS_ENDPOINT, SUCCESS_STATUS
+from django.conf import settings
 from news.models import News
 
 
@@ -26,9 +26,9 @@ class Command(BaseCommand):
     @staticmethod
     def _fetch_news(topic="japan") -> List[News]:
         response = requests.request(
-            "GET", f"{NEWS_ENDPOINT}?q={topic}&apiKey={API_KEY}"
+            "GET", f"{settings.NEWS_ENDPOINT}?q={topic}&apiKey={settings.API_KEY}"
         ).json()
-        if response["status"] == SUCCESS_STATUS:
+        if response["status"] == settings.NEWS_SUCCESS_STATUS:
             articles = response["articles"]
             return [
                 News(
