@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -20,6 +21,14 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = "django-insecure-4u@wp_y56eer=cid)dc8q$npea2paq2kb&4_f!31@^f!ozx#5m"
+
+NEWS_ENDPOINT = "https://newsapi.org/v2/everything"
+API_KEY: str = os.getenv("NEWS_API_KEY", "")
+NEWS_SUCCESS_STATUS = "ok"
+
+DEFAULT_NEWS_PER_PAGE = 20
+DEFAULT_NEWS_PER_REST_API = 100
+
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
