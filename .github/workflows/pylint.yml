@@ -3,7 +3,7 @@ name: Pylint
 on: [push]
 
 jobs:
-  build:
+  linting:
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -18,7 +18,27 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         pip install -r requirements.txt
-        pip install pylint
-    - name: Analysing the code with pylint
-      run: |
-        pylint $(git ls-files '*.py')
+    - name: Black
+      uses: microsoft/action-python@0.7.0
+      with:
+        black: true
+
+    - name: Bandit
+      uses: microsoft/action-python@0.7.0
+      with:          
+        bandit: true
+
+    - name: Pylint
+      uses: microsoft/action-python@0.7.0
+      with:
+        pylint: true
+        
+    - name: Pyright
+      uses: microsoft/action-python@0.7.0
+      with:          
+        pyright: true
+        
+    - name: Flake8
+      uses: microsoft/action-python@0.7.0
+      with:          
+        flake8: true
