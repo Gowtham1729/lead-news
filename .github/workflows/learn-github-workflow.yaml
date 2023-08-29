@@ -1,0 +1,22 @@
+name: learn-github-actions
+run-name: ${{ github.actor }} learning github actions
+on: [push]
+jobs:
+  job1:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - run: date
+  job2:
+    runs-on: windows-latest
+    steps:
+      - run: date
+  job3:
+    runs-on: macos-latest
+    steps:
+      - run: date
+  jobs4:
+    runs-on: ubuntu-latest
+    needs: [job1, job2, job3]
+    steps:
+      - run: echo "Finished all jobs"
